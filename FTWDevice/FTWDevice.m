@@ -106,19 +106,19 @@ static kern_return_t GetMACAddress(io_iterator_t intfIterator, UInt8 *MACAddress
 }
 
 - (FTWDeviceFamily) deviceFamily {
-	NSString *platformVal = [self platform];
+	NSString *hardwareModelVal = [self hardwareModel];
 	
-	if ([platformVal hasPrefix:@"Macmini"]) {
+	if ([hardwareModelVal hasPrefix:@"Macmini"]) {
 		return FTWDeviceFamilyMacMini;
-	} else if ([platformVal hasPrefix:@"MacBookAir"]) {
+	} else if ([hardwareModelVal hasPrefix:@"MacBookAir"]) {
 		return FTWDeviceFamilyMacBookAir;
-	} else if ([platformVal hasPrefix:@"MacBookPro"]) {
+	} else if ([hardwareModelVal hasPrefix:@"MacBookPro"]) {
 		return FTWDeviceFamilyMacBookPro;
-	} else if ([platformVal hasPrefix:@"MacPro"]) {
+	} else if ([hardwareModelVal hasPrefix:@"MacPro"]) {
 		return FTWDeviceFamilyMacPro;
-	} else if ([platformVal hasPrefix:@"iMac"]) {
+	} else if ([hardwareModelVal hasPrefix:@"iMac"]) {
 		return FTWDeviceFamilyiMac;
-	} else if ([platformVal hasPrefix:@"MacBook"]) {
+	} else if ([hardwareModelVal hasPrefix:@"MacBook"]) {
 		return FTWDeviceFamilyMacBook;
 	}
 	return FTWDeviceFamilyUnknown;
